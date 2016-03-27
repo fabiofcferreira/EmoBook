@@ -33,18 +33,21 @@ function generateElement() {
   iframe.setAttribute('src', popup);
   iframe.setAttribute('width', 216);
   iframe.setAttribute('height', 277);
-  iframe.addEventListener('click', onClick);
+
+  var input = document.createElement('input');
+  input.setAttribute('type', 'checkbox');
+  input.setAttribute('class', 'hidden');
 
   var a = document.createElement('a');
   a.classList.add('_6gf', '_6gb');
   a.appendChild(iframe);
 
-  elementToAdd.classList.add('_6gd', 'emobook');
-  elementToAdd.appendChild(a);
-}
+  var label = document.createElement('label');
+  label.appendChild(input);
+  label.appendChild(a);
 
-function onClick() {
-  alert("hey");
+  elementToAdd.classList.add('_6gd', 'emobook');
+  elementToAdd.appendChild(label);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,8 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
-  var emoticon = event.data.emoticon;
-  var parent = event.data.textboxParent;
-  console.log(parent);
+  var emoticon = event.data.emoticon,
+    emobooksQuery = document.querySelectorAll('.emobook input:checked'),
+    textBox = emobooksQuery[0].closest('._1d4_'),
+    textplace = textBox.querySelectorAll('br[data-text="true"]');
+
+  if (textplace == null) {
+    textplace = textBox.querySelectorAll('span[data-text="true"]');
+  }
+
+  console.log(textplace);
+
   // Falta inserir na chatbox :)
 }, false)
+
+// TODO: adicionar função para ocultar Emobook quando se clica fora dele

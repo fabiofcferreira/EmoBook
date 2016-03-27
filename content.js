@@ -27,27 +27,18 @@ function addIconLoop() {
 }
 
 function generateElement() {
-  elementToAdd = document.createElement('div');
-
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', popup);
   iframe.setAttribute('width', 216);
   iframe.setAttribute('height', 277);
 
-  var input = document.createElement('input');
-  input.setAttribute('type', 'checkbox');
-  input.setAttribute('class', 'hidden');
-
   var a = document.createElement('a');
   a.classList.add('_6gf', '_6gb');
   a.appendChild(iframe);
 
-  var label = document.createElement('label');
-  label.appendChild(input);
-  label.appendChild(a);
-
+  elementToAdd = document.createElement('div');
   elementToAdd.classList.add('_6gd', 'emobook');
-  elementToAdd.appendChild(label);
+  elementToAdd.appendChild(a);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,16 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
-  var emoticon = event.data.emoticon,
-    emobooksQuery = document.querySelectorAll('.emobook input:checked'),
-    textBox = emobooksQuery[0].closest('._1d4_'),
-    textplace = textBox.querySelectorAll('br[data-text="true"]');
+  var emoticon = event.data.emoticon;
+  var emobooks = document.querySelectorAll('.emobook iframe'), active;
 
-  if (textplace == null) {
-    textplace = textBox.querySelectorAll('span[data-text="true"]');
+  for (var i = 0; i < emobooks.length; i++) {
+    if (emobooks[i].offsetParent !== null) active = emobooks[i];
   }
 
-  console.log(textplace);
+  var chatFooter = active.closest('.fbNubFlyoutFooter');
+  console.log(chatFooter);
 
   // Falta inserir na chatbox :)
 }, false)

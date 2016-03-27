@@ -30,6 +30,7 @@
   display: none;
 }
 
-.emobook input:checked + a iframe {
+.emobook:hover iframe,
+.emobook a:hover iframe {
   display: block;
 }

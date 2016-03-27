@@ -17,7 +17,7 @@ function addIcon() {
   Array.prototype.forEach.call(chatBars, function(node) {
     // prevent from running if there is already an emobook icon
     if (node.getElementsByClassName('emobook').length > 0) return;
-    node.appendChild(elementToAdd);
+    node.appendChild(elementToAdd.cloneNode(true));
   });
 }
 

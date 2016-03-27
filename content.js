@@ -12,15 +12,16 @@ function addIcon() {
   if (chatBars.length === emoBookIcons.length) return;
 
   Array.prototype.forEach.call(chatBars, function(node) {
+    // prevent from running if there is already an emobook icon
+    if (node.getElementsByClassName('emobook').length > 0) return;
+
     var icons = node.getElementsByClassName('_6gd');
-
-    if (icons[icons.length - 1].classList.contains('emobook')) return;
-
     var el = document.createElement('div');
-    el.classList.add('_6gd', 'emobook');
-    el.innerHTML = '<a class="_6gb _6gf" role="button" title="Add an emoticon" href="#"></a>';
-    el.addEventListener("click", onClick);
-    node.appendChild(el);
+
+    emobook.classList.add('_6gd', 'emobook');
+    emobook.innerHTML = '<a class="_6gb _6gf" role="button" title="Add an emoticon" href="#"></a>';
+    emobook.addEventListener("click", onClick);
+    node.appendChild(emobook);
   });
 }
 

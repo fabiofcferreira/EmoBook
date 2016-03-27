@@ -4,6 +4,7 @@ const popup = chrome.extension.getURL("assets/popup.html");
 
 var chatBars = null;
 var emoBookIcons = null;
+var elementToAdd = null;
 
 function addIcon() {
   chatBars = document.getElementsByClassName('_552n');
@@ -16,7 +17,7 @@ function addIcon() {
   Array.prototype.forEach.call(chatBars, function(node) {
     // prevent from running if there is already an emobook icon
     if (node.getElementsByClassName('emobook').length > 0) return;
-    node.appendChild(generateElement());
+    node.appendChild(elementToAdd);
   });
 }
 
@@ -26,13 +27,7 @@ function addIconLoop() {
 }
 
 function generateElement() {
-  var date = new Date();
-  var randomId = "emobook" + date.getTime();
-  var element = document.createElement('div');
-
-  var input = document.createElement('input');
-  input.setAttribute('type', 'checkbox');
-  input.setAttribute('id', randomId);
+  elementToAdd = document.createElement('div');
 
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', popup);
@@ -40,27 +35,26 @@ function generateElement() {
   iframe.setAttribute('height', 277);
   iframe.addEventListener('click', onClick);
 
-  var label = document.createElement('label');
-  label.setAttribute('for', randomId);
+  var a = document.createElement('a');
+  a.appendChild(iframe);
 
-  var form = document.createElement('form');
-  form.appendChild(input);
-  form.appendChild(iframe);
-  form.appendChild(label);
-
-  element.classList.add('_6gd', 'emobook');
-  element.appendChild(form);
-  return element;
+  elementToAdd.classList.add('_6gd', 'emobook');
+  elementToAdd.appendChild(a);
 }
 
 function onClick() {
   alert("hey");
 }
 
-chrome.runtime.onMessage.addListener(function(details) {
-    alert('Message from frame: ' + details.data);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+  generateElement();
   addIconLoop();
 });
+
+window.addEventListener("message", (event) => {
+  if (!event.data.emobook) return;
+
+  var emoticon = event.data.emoticon;
+  console.log(emoticon);
+  // Falta inserir na chatbox :)
+}, false)

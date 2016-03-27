@@ -1,23 +1,15 @@
-.emobook input {
-  display: none;
-}
-
 .emobook iframe {
   display: none;
-}
-
-.emobook input:checked + iframe {
   position: absolute;
-  display: block;
   z-index: 999;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  right: -86px;
-  bottom: 32px;
+  bottom: 18px;
+  left: 0;
 }
 
-.emobook label {
+.emobook a {
   background-image: url('chrome-extension://__MSG_@@extension_id__/assets/emo.png');
   background-size: auto;
   background-repeat: no-repeat;
@@ -27,4 +19,10 @@
   position: relative;
   transition: opacity .2s;
   width: 16px;
+}
+
+.emobook:hover iframe,
+.emobook a:hover iframe,
+.emobook iframe:hover {
+  display: block;
 }

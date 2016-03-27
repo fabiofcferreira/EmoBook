@@ -36,6 +36,7 @@ function generateElement() {
   iframe.addEventListener('click', onClick);
 
   var a = document.createElement('a');
+  a.classList.add('_6gf', '_6gb');
   a.appendChild(iframe);
 
   elementToAdd.classList.add('_6gd', 'emobook');
@@ -55,6 +56,7 @@ window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
   var emoticon = event.data.emoticon;
-  console.log(emoticon);
+  var parent = event.data.textboxParent;
+  console.log(parent);
   // Falta inserir na chatbox :)
 }, false)

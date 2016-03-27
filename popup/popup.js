@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById(emoticons[x].id).addEventListener("click", function() {
       window.parent.postMessage({
         emobook: true,
-        emoticon: this.getAttribute("text")
+        emoticon: this.getAttribute("text"),
+        textboxParent: this.closest('._1mf ._1mj')
       }, "*");
     }, false);
   }

@@ -26,5 +26,8 @@
 				"content.js"
 			]
 		}
-	]
+	],
+	"web_accessible_resources": [
+    "emo.png"
+  ]
 }

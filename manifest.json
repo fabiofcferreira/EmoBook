@@ -28,6 +28,6 @@
 		}
 	],
 	"web_accessible_resources": [
-    "emo.png"
+    "assets/*"
   ]
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const popup = chrome.extension.getURL("assets/popup.html");
+const popup = chrome.extension.getURL("popup/popup.html");
 
 var chatBars = null;
 var emoBookIcons = null;

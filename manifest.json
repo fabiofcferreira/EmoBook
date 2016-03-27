@@ -1,16 +1,30 @@
 {
-    "manifest_version": 2,
-    "name" : "EmoBook",
-    "description": "Send emojis easily on desktop Facebook.",
-    "version": "1.0",
-    
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_title": "EmoBook"
-    },
-    
-    "icons": {
-        "48": "icon48.png",
-        "128": "icon128.png"
-    }
+	"name": "EmoBook",
+	"version": "1.0.0",
+	"description": "Send emojis easily on desktop Facebook.",
+	"homepage_url": "https://github.com/ffcf15/EmoBook",
+	"manifest_version": 2,
+	"minimum_chrome_version": "48",
+	"permissions": [
+		"https://www.facebook.com/*",
+		"storage"
+	],
+  "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+  },
+	"content_scripts": [
+		{
+			"run_at": "document_start",
+			"matches": [
+				"https://www.facebook.com/*"
+			],
+			"css": [
+				"content.css"
+			],
+			"js": [
+				"content.js"
+			]
+		}
+	]
 }

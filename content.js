@@ -16,7 +16,7 @@ function addIcon() {
     if (node.getElementsByClassName('emobook').length > 0) return;
 
     var icons = node.getElementsByClassName('_6gd');
-    var el = document.createElement('div');
+    var emobook = document.createElement('div');
 
     emobook.classList.add('_6gd', 'emobook');
     emobook.innerHTML = '<a class="_6gb _6gf" role="button" title="Add an emoticon" href="#"></a>';

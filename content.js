@@ -62,11 +62,17 @@ window.addEventListener("message", (event) => {
     textAreaParent = textArea.parentElement,
     text = textArea.innerHTML;
 
-  text += emoticon;
+    setText(textArea, emoticon);
+    /*
+    textArea.setAttribute('data-text', false);
+    console.log(textArea.getAttribute('data-text'));
+    textArea.innerHTML += emoticon;
+    */
 
-  textAreaParent.innerHTML = `<span data-text="true">${text}</span>`;
+    function setText(el, text) {
+      var te = document.createEvent('TextEvent');
+      te.initTextEvent('textInput', true, true, window, text);
+      textArea.dispatchEvent(te);
+    }
 
-
-  // TODO: set InnerHTML of parent with <span data-text="true">${text}</span>
-  // TODO: if it initially was a br, remove '._1p1t'
 }, false)

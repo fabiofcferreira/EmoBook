@@ -29,8 +29,8 @@ function addIconLoop() {
 function generateElement() {
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', popup);
-  iframe.setAttribute('width', 216);
-  iframe.setAttribute('height', 277);
+  iframe.setAttribute('width', 183);
+  iframe.setAttribute('height', 280);
 
   var a = document.createElement('a');
   a.classList.add('_6gf', '_6gb');
@@ -64,9 +64,8 @@ window.addEventListener("message", (event) => {
 
   text += emoticon;
 
-  // remove this then
-  console.log(textAreaParent);
-  console.log(text);
+  textAreaParent.innerHTML = `<span data-text="true">${text}</span>`;
+
 
   // TODO: set InnerHTML of parent with <span data-text="true">${text}</span>
   // TODO: if it initially was a br, remove '._1p1t'

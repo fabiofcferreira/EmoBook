@@ -58,12 +58,16 @@ window.addEventListener("message", (event) => {
   }
 
   var chatFooter = active.closest('.fbNubFlyoutFooter'),
-    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]'),
-    text = textArea[0].innerHTML;
+    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0],
+    textAreaParent = textArea.parentElement,
+    text = textArea.innerHTML;
 
   text += emoticon;
 
-  // TODO: get parent of textArea
+  // remove this then
+  console.log(textAreaParent);
+  console.log(text);
+
   // TODO: set InnerHTML of parent with <span data-text="true">${text}</span>
   // TODO: if it initially was a br, remove '._1p1t'
 }, false)

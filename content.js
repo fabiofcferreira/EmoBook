@@ -49,17 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
-  var emoticon = event.data.emoticon;
-  var emobooks = document.querySelectorAll('.emobook iframe'), active;
+  var emoticon = event.data.emoticon,
+   emobooks = document.querySelectorAll('.emobook iframe'),
+   active;
 
   for (var i = 0; i < emobooks.length; i++) {
     if (emobooks[i].offsetParent !== null) active = emobooks[i];
   }
 
-  var chatFooter = active.closest('.fbNubFlyoutFooter');
-  console.log(chatFooter);
+  var chatFooter = active.closest('.fbNubFlyoutFooter'),
+    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]'),
+    text = textArea[0].innerHTML;
 
-  // Falta inserir na chatbox :)
+  text += emoticon;
+
+  // TODO: get parent of textArea
+  // TODO: set InnerHTML of parent with <span data-text="true">${text}</span>
+  // TODO: if it initially was a br, remove '._1p1t'
 }, false)
-
-// TODO: adicionar função para ocultar Emobook quando se clica fora dele

@@ -63,4 +63,10 @@ window.addEventListener("message", (event) => {
   var te = document.createEvent('TextEvent');
   te.initTextEvent('textInput', true, true, window, emoticon);
   textArea.dispatchEvent(te);
+
+  try {
+    textArea.parentElement.dispatchEvent(new Event('focus'));
+  } catch (e) {}
+
+  return false;
 }, false)

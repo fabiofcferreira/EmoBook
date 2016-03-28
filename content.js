@@ -50,29 +50,17 @@ window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
   var emoticon = event.data.emoticon,
-   emobooks = document.querySelectorAll('.emobook iframe'),
-   active;
+    emobooks = document.querySelectorAll('.emobook iframe'),
+    active;
 
   for (var i = 0; i < emobooks.length; i++) {
     if (emobooks[i].offsetParent !== null) active = emobooks[i];
   }
 
   var chatFooter = active.closest('.fbNubFlyoutFooter'),
-    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0],
-    textAreaParent = textArea.parentElement,
-    text = textArea.innerHTML;
+    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0];
 
-    setText(textArea, emoticon);
-    /*
-    textArea.setAttribute('data-text', false);
-    console.log(textArea.getAttribute('data-text'));
-    textArea.innerHTML += emoticon;
-    */
-
-    function setText(el, text) {
-      var te = document.createEvent('TextEvent');
-      te.initTextEvent('textInput', true, true, window, text);
-      textArea.dispatchEvent(te);
-    }
-
+  var te = document.createEvent('TextEvent');
+  te.initTextEvent('textInput', true, true, window, emoticon);
+  textArea.dispatchEvent(te);
 }, false)

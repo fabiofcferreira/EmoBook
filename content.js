@@ -58,15 +58,13 @@ window.addEventListener("message", (event) => {
   }
 
   var chatFooter = active.closest('.fbNubFlyoutFooter'),
-    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0];
+    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0],
+    textAreaParent = textArea.parentElement;
 
   var te = document.createEvent('TextEvent');
   te.initTextEvent('textInput', true, true, window, emoticon);
   textArea.dispatchEvent(te);
-
-  try {
-    textArea.parentElement.dispatchEvent(new Event('focus'));
-  } catch (e) {}
+  textAreaParent.dispatchEvent(new Event('focus'));
 
   return false;
 }, false)

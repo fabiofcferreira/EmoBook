@@ -4,11 +4,15 @@ const popup = chrome.extension.getURL("popup.html");
 
 var chatBars = null;
 var emoBookIcons = null;
-var elementToAdd = null;
+var baseElement = null;
 
 function addChatIcon() {
   chatBars = document.getElementsByClassName('_552n');
   emoBookIcons = document.getElementsByClassName('emobook');
+
+  var chatIconElement = document.createElement('div');
+  chatIconElement.classList.add('_6gd', 'emobook');
+  chatIconElement.appendChild(baseElement);
 
   // prevent the function for running if there are the same amount of chat
   // windows and emobook icons
@@ -17,7 +21,7 @@ function addChatIcon() {
   Array.prototype.forEach.call(chatBars, function(node) {
     // prevent from running if there is already an emobook icon
     if (node.getElementsByClassName('emobook').length > 0) return;
-    node.appendChild(elementToAdd.cloneNode(true));
+    node.appendChild(chatIconElement.cloneNode(true));
   });
 }
 
@@ -30,7 +34,7 @@ function addWhatsOnYourMindIcon() {
 }
 
 function addIconLoop() {
-  addIcon();
+  addChatIcon();
   addCommentsIcon();
   setTimeout(addIconLoop, 100);
 }
@@ -45,9 +49,7 @@ function generateElement() {
   a.classList.add('_6gf', '_6gb');
   a.appendChild(iframe);
 
-  elementToAdd = document.createElement('div');
-  elementToAdd.classList.add('_6gd', 'emobook');
-  elementToAdd.appendChild(a);
+  baseElement = a;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

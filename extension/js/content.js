@@ -48,7 +48,7 @@ function addCommentsIcon() {
   if (commentBoxes.length === commentIcons.length) return;
 
   Array.prototype.forEach.call(commentIcons, function(node) {
-    if(node.getElementsByClassName('emobook-comments').length > 0) return;
+    if (node.getElementsByClassName('emobook-comments').length > 0) return;
     node.appendChild(commentIconElement.cloneNode(true));
   });
 }
@@ -58,29 +58,32 @@ function addWhatsOnYourMindIcon() {
     return;
   }
 
-  var composer = document.getElementById('pagelet_composer');
-  var icons = composer.getElementsByClassName('_1dsp')[0];
-  var iframe = document.createElement('iframe');
+  var composer = document.getElementById('pagelet_composer'),
+    iframe = document.createElement('iframe'),
+    iframeContainer = document.createElement('div'),
+    button = document.createElement('div'),
+    buttonContainer = document.createElement('li'),
+    icons = composer.getElementsByClassName('_1dsp')[0],
+    buttons = composer.getElementsByClassName('_1dso')[0];
+
   iframe.setAttribute('src', popup);
   iframe.setAttribute('width', '100%');
   iframe.setAttribute('height', 250);
+  iframeContainer.setAttribute('class', 'emobook-composer closed');
+  iframeContainer.appendChild(iframe);
 
-  var div = document.createElement('div');
-  div.setAttribute('class', 'emobook-composer closed');
-  div.appendChild(iframe);
-
-  var list = composer.getElementsByClassName('_1dso')[0];
-  var li = document.createElement('li');
-  li.setAttribute('class', 'emobook-composer-button');
-  li.innerHTML = `<div class="_42ft _4jy0 _55pi _5vto _55_p _2agf _p _4jy3 _517h _51sy">Emoticons</div>`;
-  li.addEventListener('click', function(event) {
+  button.classList.add('_42ft', '_4jy0', '_55pi', '_5vto', '_55_p', '_2agf', '_p', '_4jy3', '_517h', '_51sy');
+  button.innerHTML = 'Emoticons';
+  buttonContainer.setAttribute('class', 'emobook-composer-button');
+  buttonContainer.appendChild(button);
+  buttonContainer.addEventListener('click', function(event) {
     event.preventDefault();
-    li.classList.toggle('openToggler');
-    div.classList.toggle('opened');
+    buttonContainer.classList.toggle('openToggler');
+    iframeContainer.classList.toggle('opened');
   });
 
-  list.insertBefore(li, list.childNodes[0]);
-  icons.appendChild(div);
+  buttons.insertBefore(buttonContainer, buttons.childNodes[0]);
+  icons.appendChild(iframeContainer);
 }
 
 function addIconLoop() {
@@ -113,20 +116,25 @@ window.addEventListener("message", (event) => {
 
   var emoticon = event.data.emoticon,
     emobooks = document.querySelectorAll('.emobook iframe'),
-    active;
+    active, typeElement, focusElement;
 
   for (var i = 0; i < emobooks.length; i++) {
     if (emobooks[i].offsetParent !== null) active = emobooks[i];
   }
 
-  var chatFooter = active.closest('.fbNubFlyoutFooter'),
-    textArea = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0],
-    textAreaParent = textArea.parentElement;
+  if (active != null) {
+    var chatFooter = active.closest('.fbNubFlyoutFooter');
+    typeElement = chatFooter.querySelectorAll('br[data-text="true"], span[data-text="true"]')[0];
+    focusElement = typeElement.parentElement;
+  } else {
+    // "What's in your mind?"
+    typeElement = document.getElementById('pagelet_composer').getElementsByTagName('textarea')[0];
+  }
 
   var te = document.createEvent('TextEvent');
   te.initTextEvent('textInput', true, true, window, emoticon);
-  textArea.dispatchEvent(te);
-  textAreaParent.dispatchEvent(new Event('focus'));
+  typeElement.dispatchEvent(te);
+  if (focusElement != null) focusElement.dispatchEvent(new Event('focus'));
 
   return false;
 }, false)

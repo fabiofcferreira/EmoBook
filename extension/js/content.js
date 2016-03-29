@@ -5,6 +5,7 @@ const popup = chrome.extension.getURL("popup.html");
 var chatBars = null;
 var emoBookIcons = null;
 var baseElement = null;
+var commentBoxes = null;
 
 function addChatIcon() {
   chatBars = document.getElementsByClassName('_552n');
@@ -26,7 +27,30 @@ function addChatIcon() {
 }
 
 function addCommentsIcon() {
+  var commentBoxes = document.getElementsByClassName('UFICommentAttachmentButtons');
+  var commentIcons = document.getElementsByClassName('emobook-comments');
 
+  /* iframe with popup.html as its source */
+  var iframeComments = document.createElement('iframe');
+  iframeComments.setAttribute('src', popup);
+  iframeComments.setAttribute("width", 212);
+  iframeComments.setAttribute("height", 280);
+
+  var c = document.createElement('a');
+  c.classList.add("_r1a");
+  c.appendChild(iframeComments);
+
+
+  var commentIconElement = document.createElement('div');
+  commentIconElement.classList.add('emobook-comments');
+  commentIconElement.appendChild(c);
+
+  if (commentBoxes.length === commentIcons.length) return;
+
+  Array.prototype.forEach.call(commentIcons, function(node) {
+    if(node.getElementsByClassName('emobook-comments').length > 0) return;
+    node.appendChild(commentIconElement.cloneNode(true));
+  });
 }
 
 function addWhatsOnYourMindIcon() {

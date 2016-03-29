@@ -6,7 +6,7 @@ var chatBars = null;
 var emoBookIcons = null;
 var elementToAdd = null;
 
-function addIcon() {
+function addChatIcon() {
   chatBars = document.getElementsByClassName('_552n');
   emoBookIcons = document.getElementsByClassName('emobook');
 
@@ -21,8 +21,17 @@ function addIcon() {
   });
 }
 
+function addCommentsIcon() {
+
+}
+
+function addWhatsOnYourMindIcon() {
+
+}
+
 function addIconLoop() {
   addIcon();
+  addCommentsIcon();
   setTimeout(addIconLoop, 100);
 }
 
@@ -43,6 +52,7 @@ function generateElement() {
 
 document.addEventListener('DOMContentLoaded', () => {
   generateElement();
+  addWhatsOnYourMindIcon();
   addIconLoop();
 });
 

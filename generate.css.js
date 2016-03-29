@@ -4,7 +4,7 @@ const eachHeight = 17;
 const eachWidth = 17;
 const baseId = "emo";
 
-var finalCSS = null;
+var finalCSS = "";
 var icon = 0;
 
 for (var h = 0; h < height; h += eachHeight) {

@@ -1,6 +1,6 @@
 'use strict';
 
-const popup = chrome.extension.getURL("popup/popup.html");
+const popup = chrome.extension.getURL("popup.html");
 
 var chatBars = null;
 var emoBookIcons = null;
@@ -29,7 +29,7 @@ function addIconLoop() {
 function generateElement() {
   var iframe = document.createElement('iframe');
   iframe.setAttribute('src', popup);
-  iframe.setAttribute('width', 183);
+  iframe.setAttribute('width', 212);
   iframe.setAttribute('height', 280);
 
   var a = document.createElement('a');

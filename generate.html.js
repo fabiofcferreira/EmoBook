@@ -1,7 +1,7 @@
-const totalIcons = 499;
+const totalIcons = 449;
 const baseId = "emo";
 
-var finalHTML = null;
+var finalHTML = "";
 var icon = 0;
 
 for (var i = 0; i < totalIcons; i++) {

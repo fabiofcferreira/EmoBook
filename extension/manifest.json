@@ -19,14 +19,16 @@
             "https://www.facebook.com/*"
         ],
         "css": [
-            "content.css"
+            "css/content.css"
         ],
         "js": [
-            "content.js"
+            "js/content.js"
         ]
     }],
     "web_accessible_resources": [
-        "popup/*",
-        "emo.png"
+        "popup.html",
+        "css/popup.css",
+        "js/popup.js",
+        "emoji.png"
     ]
 }

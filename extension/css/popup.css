@@ -1,0 +1,504 @@
+body {
+  margin: 0;
+  padding: 8px;
+  height: 100%;
+  font-size: 100%;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255,255,255, 0);
+    -webkit-border-radius: 5px;
+}
+::-webkit-scrollbar:hover {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ddd;
+    -webkit-border-radius: 100px;
+    transition: .2s ease all;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active  {
+    background: #ccc;
+}
+
+/* EMOTICONS */
+
+.emotion {
+  display: inline-block;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.emotion:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.emo-icon {
+  max-height: 17px;
+  max-width: 17px;
+  width: 17px;
+  height: 17px;
+  background-repeat: no-repeat;
+  background-image: url(../emoji.png);
+  margin: 2px 1px 0px 2px;
+}
+
+#emo0 {background-position: 0px -0px;}
+#emo1 {background-position: 0px -17px;}
+#emo2 {background-position: 0px -34px;}
+#emo3 {background-position: 0px -51px;}
+#emo4 {background-position: 0px -68px;}
+#emo5 {background-position: 0px -85px;}
+#emo6 {background-position: 0px -102px;}
+#emo7 {background-position: 0px -119px;}
+#emo8 {background-position: 0px -136px;}
+#emo9 {background-position: 0px -153px;}
+#emo10 {background-position: 0px -170px;}
+#emo11 {background-position: 0px -187px;}
+#emo12 {background-position: 0px -204px;}
+#emo13 {background-position: 0px -221px;}
+#emo14 {background-position: 0px -238px;}
+#emo15 {background-position: 0px -255px;}
+#emo16 {background-position: 0px -272px;}
+#emo17 {background-position: 0px -289px;}
+#emo18 {background-position: 0px -306px;}
+#emo19 {background-position: 0px -323px;}
+#emo20 {background-position: 0px -340px;}
+#emo21 {background-position: 0px -357px;}
+#emo22 {background-position: 0px -374px;}
+#emo23 {background-position: 0px -391px;}
+#emo24 {background-position: 0px -408px;}
+#emo25 {background-position: 0px -425px;}
+#emo26 {background-position: 0px -442px;}
+#emo27 {background-position: 0px -459px;}
+#emo28 {background-position: 0px -476px;}
+#emo29 {background-position: 0px -493px;}
+#emo30 {background-position: 0px -510px;}
+#emo31 {background-position: 0px -527px;}
+#emo32 {background-position: 0px -544px;}
+#emo33 {background-position: 0px -561px;}
+#emo34 {background-position: 0px -578px;}
+#emo35 {background-position: 0px -595px;}
+#emo36 {background-position: 0px -612px;}
+#emo37 {background-position: 0px -629px;}
+#emo38 {background-position: 0px -646px;}
+#emo39 {background-position: 0px -663px;}
+#emo40 {background-position: 0px -680px;}
+#emo41 {background-position: 0px -697px;}
+#emo42 {background-position: 0px -714px;}
+#emo43 {background-position: 0px -731px;}
+#emo44 {background-position: 0px -748px;}
+#emo45 {background-position: 0px -765px;}
+#emo46 {background-position: 0px -782px;}
+#emo47 {background-position: 0px -799px;}
+#emo48 {background-position: 0px -816px;}
+#emo49 {background-position: 0px -833px;}
+#emo50 {background-position: 0px -850px;}
+#emo51 {background-position: 0px -867px;}
+#emo52 {background-position: 0px -884px;}
+#emo53 {background-position: 0px -901px;}
+#emo54 {background-position: 0px -918px;}
+#emo55 {background-position: 0px -935px;}
+#emo56 {background-position: 0px -952px;}
+#emo57 {background-position: 0px -969px;}
+#emo58 {background-position: 0px -986px;}
+#emo59 {background-position: 0px -1003px;}
+#emo60 {background-position: 0px -1020px;}
+#emo61 {background-position: 0px -1037px;}
+#emo62 {background-position: 0px -1054px;}
+#emo63 {background-position: 0px -1071px;}
+#emo64 {background-position: 0px -1088px;}
+#emo65 {background-position: 0px -1105px;}
+#emo66 {background-position: 0px -1122px;}
+#emo67 {background-position: 0px -1139px;}
+#emo68 {background-position: 0px -1156px;}
+#emo69 {background-position: 0px -1173px;}
+#emo70 {background-position: 0px -1190px;}
+#emo71 {background-position: 0px -1207px;}
+#emo72 {background-position: 0px -1224px;}
+#emo73 {background-position: 0px -1241px;}
+#emo74 {background-position: 0px -1258px;}
+#emo75 {background-position: 0px -1275px;}
+#emo76 {background-position: 0px -1292px;}
+#emo77 {background-position: 0px -1309px;}
+#emo78 {background-position: 0px -1326px;}
+#emo79 {background-position: 0px -1343px;}
+#emo80 {background-position: 0px -1360px;}
+#emo81 {background-position: 0px -1377px;}
+#emo82 {background-position: 0px -1394px;}
+#emo83 {background-position: 0px -1411px;}
+#emo84 {background-position: 0px -1428px;}
+#emo85 {background-position: 0px -1445px;}
+#emo86 {background-position: 0px -1462px;}
+#emo87 {background-position: 0px -1479px;}
+#emo88 {background-position: 0px -1496px;}
+#emo89 {background-position: 0px -1513px;}
+#emo90 {background-position: 0px -1530px;}
+#emo91 {background-position: 0px -1547px;}
+#emo92 {background-position: 0px -1564px;}
+#emo93 {background-position: 0px -1581px;}
+#emo94 {background-position: 0px -1598px;}
+#emo95 {background-position: 0px -1615px;}
+#emo96 {background-position: 0px -1632px;}
+#emo97 {background-position: 0px -1649px;}
+#emo98 {background-position: 0px -1666px;}
+#emo99 {background-position: 0px -1683px;}
+#emo100 {background-position: 0px -1700px;}
+#emo101 {background-position: 0px -1717px;}
+#emo102 {background-position: 0px -1734px;}
+#emo103 {background-position: 0px -1751px;}
+#emo104 {background-position: 0px -1768px;}
+#emo105 {background-position: 0px -1785px;}
+#emo106 {background-position: 0px -1802px;}
+#emo107 {background-position: 0px -1819px;}
+#emo108 {background-position: 0px -1836px;}
+#emo109 {background-position: 0px -1853px;}
+#emo110 {background-position: 0px -1870px;}
+#emo111 {background-position: 0px -1887px;}
+#emo112 {background-position: 0px -1904px;}
+#emo113 {background-position: 0px -1921px;}
+#emo114 {background-position: 0px -1938px;}
+#emo115 {background-position: 0px -1955px;}
+#emo116 {background-position: 0px -1972px;}
+#emo117 {background-position: 0px -1989px;}
+#emo118 {background-position: 0px -2006px;}
+#emo119 {background-position: 0px -2023px;}
+#emo120 {background-position: 0px -2040px;}
+#emo121 {background-position: 0px -2057px;}
+#emo122 {background-position: 0px -2074px;}
+#emo123 {background-position: 0px -2091px;}
+#emo124 {background-position: 0px -2108px;}
+#emo125 {background-position: 0px -2125px;}
+#emo126 {background-position: 0px -2142px;}
+#emo127 {background-position: 0px -2159px;}
+#emo128 {background-position: 0px -2176px;}
+#emo129 {background-position: 0px -2193px;}
+#emo130 {background-position: 0px -2210px;}
+#emo131 {background-position: 0px -2227px;}
+#emo132 {background-position: 0px -2244px;}
+#emo133 {background-position: 0px -2261px;}
+#emo134 {background-position: 0px -2278px;}
+#emo135 {background-position: 0px -2295px;}
+#emo136 {background-position: 0px -2312px;}
+#emo137 {background-position: 0px -2329px;}
+#emo138 {background-position: 0px -2346px;}
+#emo139 {background-position: 0px -2363px;}
+#emo140 {background-position: 0px -2380px;}
+#emo141 {background-position: 0px -2397px;}
+#emo142 {background-position: 0px -2414px;}
+#emo143 {background-position: 0px -2431px;}
+#emo144 {background-position: 0px -2448px;}
+#emo145 {background-position: 0px -2465px;}
+#emo146 {background-position: 0px -2482px;}
+#emo147 {background-position: 0px -2499px;}
+#emo148 {background-position: 0px -2516px;}
+#emo149 {background-position: 0px -2533px;}
+#emo150 {background-position: 0px -2550px;}
+#emo151 {background-position: 0px -2567px;}
+#emo152 {background-position: 0px -2584px;}
+#emo153 {background-position: 0px -2601px;}
+#emo154 {background-position: 0px -2618px;}
+#emo155 {background-position: 0px -2635px;}
+#emo156 {background-position: 0px -2652px;}
+#emo157 {background-position: 0px -2669px;}
+#emo158 {background-position: 0px -2686px;}
+#emo159 {background-position: 0px -2703px;}
+#emo160 {background-position: 0px -2720px;}
+#emo161 {background-position: 0px -2737px;}
+#emo162 {background-position: 0px -2754px;}
+#emo163 {background-position: 0px -2771px;}
+#emo164 {background-position: 0px -2788px;}
+#emo165 {background-position: 0px -2805px;}
+#emo166 {background-position: 0px -2822px;}
+#emo167 {background-position: 0px -2839px;}
+#emo168 {background-position: 0px -2856px;}
+#emo169 {background-position: 0px -2873px;}
+#emo170 {background-position: 0px -2890px;}
+#emo171 {background-position: 0px -2907px;}
+#emo172 {background-position: 0px -2924px;}
+#emo173 {background-position: 0px -2941px;}
+#emo174 {background-position: 0px -2958px;}
+#emo175 {background-position: 0px -2975px;}
+#emo176 {background-position: 0px -2992px;}
+#emo177 {background-position: 0px -3009px;}
+#emo178 {background-position: 0px -3026px;}
+#emo179 {background-position: 0px -3043px;}
+#emo180 {background-position: 0px -3060px;}
+#emo181 {background-position: 0px -3077px;}
+#emo182 {background-position: 0px -3094px;}
+#emo183 {background-position: 0px -3111px;}
+#emo184 {background-position: 0px -3128px;}
+#emo185 {background-position: 0px -3145px;}
+#emo186 {background-position: 0px -3162px;}
+#emo187 {background-position: 0px -3179px;}
+#emo188 {background-position: 0px -3196px;}
+#emo189 {background-position: 0px -3213px;}
+#emo190 {background-position: 0px -3230px;}
+#emo191 {background-position: 0px -3247px;}
+#emo192 {background-position: 0px -3264px;}
+#emo193 {background-position: 0px -3281px;}
+#emo194 {background-position: 0px -3298px;}
+#emo195 {background-position: 0px -3315px;}
+#emo196 {background-position: 0px -3332px;}
+#emo197 {background-position: 0px -3349px;}
+#emo198 {background-position: 0px -3366px;}
+#emo199 {background-position: 0px -3383px;}
+#emo200 {background-position: 0px -3400px;}
+#emo201 {background-position: 0px -3417px;}
+#emo202 {background-position: 0px -3434px;}
+#emo203 {background-position: 0px -3451px;}
+#emo204 {background-position: 0px -3468px;}
+#emo205 {background-position: 0px -3485px;}
+#emo206 {background-position: 0px -3502px;}
+#emo207 {background-position: 0px -3519px;}
+#emo208 {background-position: 0px -3536px;}
+#emo209 {background-position: 0px -3553px;}
+#emo210 {background-position: 0px -3570px;}
+#emo211 {background-position: 0px -3587px;}
+#emo212 {background-position: 0px -3604px;}
+#emo213 {background-position: 0px -3621px;}
+#emo214 {background-position: 0px -3638px;}
+#emo215 {background-position: 0px -3655px;}
+#emo216 {background-position: 0px -3672px;}
+#emo217 {background-position: 0px -3689px;}
+#emo218 {background-position: 0px -3706px;}
+#emo219 {background-position: 0px -3723px;}
+#emo220 {background-position: 0px -3740px;}
+#emo221 {background-position: 0px -3757px;}
+#emo222 {background-position: 0px -3774px;}
+#emo223 {background-position: 0px -3791px;}
+#emo224 {background-position: 0px -3808px;}
+#emo225 {background-position: 0px -3825px;}
+#emo226 {background-position: 0px -3842px;}
+#emo227 {background-position: 0px -3859px;}
+#emo228 {background-position: 0px -3876px;}
+#emo229 {background-position: 0px -3893px;}
+#emo230 {background-position: 0px -3910px;}
+#emo231 {background-position: 0px -3927px;}
+#emo232 {background-position: 0px -3944px;}
+#emo233 {background-position: 0px -3961px;}
+#emo234 {background-position: 0px -3978px;}
+#emo235 {background-position: 0px -3995px;}
+#emo236 {background-position: 0px -4012px;}
+#emo237 {background-position: 0px -4029px;}
+#emo238 {background-position: 0px -4046px;}
+#emo239 {background-position: 0px -4063px;}
+#emo240 {background-position: 0px -4080px;}
+#emo241 {background-position: 0px -4097px;}
+#emo242 {background-position: 0px -4114px;}
+#emo243 {background-position: 0px -4131px;}
+#emo244 {background-position: 0px -4148px;}
+#emo245 {background-position: 0px -4165px;}
+#emo246 {background-position: 0px -4182px;}
+#emo247 {background-position: 0px -4199px;}
+#emo248 {background-position: 0px -4216px;}
+#emo249 {background-position: 0px -4233px;}
+#emo250 {background-position: 0px -4250px;}
+#emo251 {background-position: 0px -4267px;}
+#emo252 {background-position: 0px -4284px;}
+#emo253 {background-position: 0px -4301px;}
+#emo254 {background-position: 0px -4318px;}
+#emo255 {background-position: 0px -4335px;}
+#emo256 {background-position: 0px -4352px;}
+#emo257 {background-position: 0px -4369px;}
+#emo258 {background-position: 0px -4386px;}
+#emo259 {background-position: 0px -4403px;}
+#emo260 {background-position: 0px -4420px;}
+#emo261 {background-position: 0px -4437px;}
+#emo262 {background-position: 0px -4454px;}
+#emo263 {background-position: 0px -4471px;}
+#emo264 {background-position: 0px -4488px;}
+#emo265 {background-position: 0px -4505px;}
+#emo266 {background-position: 0px -4522px;}
+#emo267 {background-position: 0px -4539px;}
+#emo268 {background-position: 0px -4556px;}
+#emo269 {background-position: 0px -4573px;}
+#emo270 {background-position: 0px -4590px;}
+#emo271 {background-position: 0px -4607px;}
+#emo272 {background-position: 0px -4624px;}
+#emo273 {background-position: 0px -4641px;}
+#emo274 {background-position: 0px -4658px;}
+#emo275 {background-position: 0px -4675px;}
+#emo276 {background-position: 0px -4692px;}
+#emo277 {background-position: 0px -4709px;}
+#emo278 {background-position: 0px -4726px;}
+#emo279 {background-position: 0px -4743px;}
+#emo280 {background-position: 0px -4760px;}
+#emo281 {background-position: 0px -4777px;}
+#emo282 {background-position: 0px -4794px;}
+#emo283 {background-position: 0px -4811px;}
+#emo284 {background-position: 0px -4828px;}
+#emo285 {background-position: 0px -4845px;}
+#emo286 {background-position: 0px -4862px;}
+#emo287 {background-position: 0px -4879px;}
+#emo288 {background-position: 0px -4896px;}
+#emo289 {background-position: 0px -4913px;}
+#emo290 {background-position: 0px -4930px;}
+#emo291 {background-position: 0px -4947px;}
+#emo292 {background-position: 0px -4964px;}
+#emo293 {background-position: 0px -4981px;}
+#emo294 {background-position: 0px -4998px;}
+#emo295 {background-position: 0px -5015px;}
+#emo296 {background-position: 0px -5032px;}
+#emo297 {background-position: 0px -5049px;}
+#emo298 {background-position: 0px -5066px;}
+#emo299 {background-position: 0px -5083px;}
+#emo300 {background-position: 0px -5100px;}
+#emo301 {background-position: 0px -5117px;}
+#emo302 {background-position: 0px -5134px;}
+#emo303 {background-position: 0px -5151px;}
+#emo304 {background-position: 0px -5168px;}
+#emo305 {background-position: 0px -5185px;}
+#emo306 {background-position: 0px -5202px;}
+#emo307 {background-position: 0px -5219px;}
+#emo308 {background-position: 0px -5236px;}
+#emo309 {background-position: 0px -5253px;}
+#emo310 {background-position: 0px -5270px;}
+#emo311 {background-position: 0px -5287px;}
+#emo312 {background-position: 0px -5304px;}
+#emo313 {background-position: 0px -5321px;}
+#emo314 {background-position: 0px -5338px;}
+#emo315 {background-position: 0px -5355px;}
+#emo316 {background-position: 0px -5372px;}
+#emo317 {background-position: 0px -5389px;}
+#emo318 {background-position: 0px -5406px;}
+#emo319 {background-position: 0px -5423px;}
+#emo320 {background-position: 0px -5440px;}
+#emo321 {background-position: 0px -5457px;}
+#emo322 {background-position: 0px -5474px;}
+#emo323 {background-position: 0px -5491px;}
+#emo324 {background-position: 0px -5508px;}
+#emo325 {background-position: 0px -5525px;}
+#emo326 {background-position: 0px -5542px;}
+#emo327 {background-position: 0px -5559px;}
+#emo328 {background-position: 0px -5576px;}
+#emo329 {background-position: 0px -5593px;}
+#emo330 {background-position: 0px -5610px;}
+#emo331 {background-position: 0px -5627px;}
+#emo332 {background-position: 0px -5644px;}
+#emo333 {background-position: 0px -5661px;}
+#emo334 {background-position: 0px -5678px;}
+#emo335 {background-position: 0px -5695px;}
+#emo336 {background-position: 0px -5712px;}
+#emo337 {background-position: 0px -5729px;}
+#emo338 {background-position: 0px -5746px;}
+#emo339 {background-position: 0px -5763px;}
+#emo340 {background-position: 0px -5780px;}
+#emo341 {background-position: 0px -5797px;}
+#emo342 {background-position: 0px -5814px;}
+#emo343 {background-position: 0px -5831px;}
+#emo344 {background-position: 0px -5848px;}
+#emo345 {background-position: 0px -5865px;}
+#emo346 {background-position: 0px -5882px;}
+#emo347 {background-position: 0px -5899px;}
+#emo348 {background-position: 0px -5916px;}
+#emo349 {background-position: 0px -5933px;}
+#emo350 {background-position: 0px -5950px;}
+#emo351 {background-position: 0px -5967px;}
+#emo352 {background-position: 0px -5984px;}
+#emo353 {background-position: 0px -6001px;}
+#emo354 {background-position: 0px -6018px;}
+#emo355 {background-position: 0px -6035px;}
+#emo356 {background-position: 0px -6052px;}
+#emo357 {background-position: 0px -6069px;}
+#emo358 {background-position: 0px -6086px;}
+#emo359 {background-position: 0px -6103px;}
+#emo360 {background-position: 0px -6120px;}
+#emo361 {background-position: 0px -6137px;}
+#emo362 {background-position: 0px -6154px;}
+#emo363 {background-position: 0px -6171px;}
+#emo364 {background-position: 0px -6188px;}
+#emo365 {background-position: 0px -6205px;}
+#emo366 {background-position: 0px -6222px;}
+#emo367 {background-position: 0px -6239px;}
+#emo368 {background-position: 0px -6256px;}
+#emo369 {background-position: 0px -6273px;}
+#emo370 {background-position: 0px -6290px;}
+#emo371 {background-position: 0px -6307px;}
+#emo372 {background-position: 0px -6324px;}
+#emo373 {background-position: 0px -6341px;}
+#emo374 {background-position: 0px -6358px;}
+#emo375 {background-position: 0px -6375px;}
+#emo376 {background-position: 0px -6392px;}
+#emo377 {background-position: 0px -6409px;}
+#emo378 {background-position: 0px -6426px;}
+#emo379 {background-position: 0px -6443px;}
+#emo380 {background-position: 0px -6460px;}
+#emo381 {background-position: 0px -6477px;}
+#emo382 {background-position: 0px -6494px;}
+#emo383 {background-position: 0px -6511px;}
+#emo384 {background-position: 0px -6528px;}
+#emo385 {background-position: 0px -6545px;}
+#emo386 {background-position: 0px -6562px;}
+#emo387 {background-position: 0px -6579px;}
+#emo388 {background-position: 0px -6596px;}
+#emo389 {background-position: 0px -6613px;}
+#emo390 {background-position: 0px -6630px;}
+#emo391 {background-position: 0px -6647px;}
+#emo392 {background-position: 0px -6664px;}
+#emo393 {background-position: 0px -6681px;}
+#emo394 {background-position: 0px -6698px;}
+#emo395 {background-position: 0px -6715px;}
+#emo396 {background-position: 0px -6732px;}
+#emo397 {background-position: 0px -6749px;}
+#emo398 {background-position: 0px -6766px;}
+#emo399 {background-position: 0px -6783px;}
+#emo400 {background-position: 0px -6800px;}
+#emo401 {background-position: 0px -6817px;}
+#emo402 {background-position: 0px -6834px;}
+#emo403 {background-position: 0px -6851px;}
+#emo404 {background-position: 0px -6868px;}
+#emo405 {background-position: 0px -6885px;}
+#emo406 {background-position: 0px -6902px;}
+#emo407 {background-position: 0px -6919px;}
+#emo408 {background-position: 0px -6936px;}
+#emo409 {background-position: 0px -6953px;}
+#emo410 {background-position: 0px -6970px;}
+#emo411 {background-position: 0px -6987px;}
+#emo412 {background-position: 0px -7004px;}
+#emo413 {background-position: 0px -7021px;}
+#emo414 {background-position: 0px -7038px;}
+#emo415 {background-position: 0px -7055px;}
+#emo416 {background-position: 0px -7072px;}
+#emo417 {background-position: 0px -7089px;}
+#emo418 {background-position: 0px -7106px;}
+#emo419 {background-position: 0px -7123px;}
+#emo420 {background-position: 0px -7140px;}
+#emo421 {background-position: 0px -7157px;}
+#emo422 {background-position: 0px -7174px;}
+#emo423 {background-position: 0px -7191px;}
+#emo424 {background-position: 0px -7208px;}
+#emo425 {background-position: 0px -7225px;}
+#emo426 {background-position: 0px -7242px;}
+#emo427 {background-position: 0px -7259px;}
+#emo428 {background-position: 0px -7276px;}
+#emo429 {background-position: 0px -7293px;}
+#emo430 {background-position: 0px -7310px;}
+#emo431 {background-position: 0px -7327px;}
+#emo432 {background-position: 0px -7344px;}
+#emo433 {background-position: 0px -7361px;}
+#emo434 {background-position: 0px -7378px;}
+#emo435 {background-position: 0px -7395px;}
+#emo436 {background-position: 0px -7412px;}
+#emo437 {background-position: 0px -7429px;}
+#emo438 {background-position: 0px -7446px;}
+#emo439 {background-position: 0px -7463px;}
+#emo440 {background-position: 0px -7480px;}
+#emo441 {background-position: 0px -7497px;}
+#emo442 {background-position: 0px -7514px;}
+#emo443 {background-position: 0px -7531px;}
+#emo444 {background-position: 0px -7548px;}
+#emo445 {background-position: 0px -7565px;}
+#emo446 {background-position: 0px -7582px;}
+#emo447 {background-position: 0px -7599px;}
+#emo448 {background-position: 0px -7616px;}

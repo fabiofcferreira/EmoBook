@@ -3,30 +3,41 @@
 const popup = chrome.extension.getURL("popup.html");
 
 var chatBars = null;
-var emoBookIcons = null;
-var baseElement = null;
+var chatElement = null;
+var chatEmoBooks = null;
 var commentBoxes = null;
 
-function addChatIcon() {
-  chatBars = document.getElementsByClassName('_552n');
-  emoBookIcons = document.getElementsByClassName('emobook');
+function genChatElement() {
+  var iframe = document.createElement('iframe');
+  iframe.setAttribute('src', popup);
+  iframe.setAttribute('width', 212);
+  iframe.setAttribute('height', 280);
 
-  var chatIconElement = document.createElement('div');
-  chatIconElement.classList.add('_6gd', 'emobook');
-  chatIconElement.appendChild(baseElement);
+  var a = document.createElement('a');
+  a.classList.add('_6gf', '_6gb', 'open');
+  a.appendChild(iframe);
+
+  chatElement = document.createElement('div');
+  chatElement.classList.add('_6gd', 'emobook-chat');
+  chatElement.appendChild(a);
+}
+
+function addToChats() {
+  chatBars = document.getElementsByClassName('_552n');
+  chatEmoBooks = document.getElementsByClassName('emobook-chat');
 
   // prevent the function for running if there are the same amount of chat
   // windows and emobook icons
-  if (chatBars.length === emoBookIcons.length) return;
+  if (chatBars.length === chatEmoBooks.length) return;
 
   Array.prototype.forEach.call(chatBars, function(node) {
     // prevent from running if there is already an emobook icon
-    if (node.getElementsByClassName('emobook').length > 0) return;
-    node.appendChild(chatIconElement.cloneNode(true));
+    if (node.getElementsByClassName('emobook-chat').length > 0) return;
+    node.appendChild(chatElement.cloneNode(true));
   });
 }
 
-function addCommentsIcon() {
+function addToComments() {
   var commentBoxes = document.getElementsByClassName('UFICommentAttachmentButtons');
   var commentIcons = document.getElementsByClassName('emobook-comments');
 
@@ -53,18 +64,28 @@ function addCommentsIcon() {
   });
 }
 
-function addWhatsOnYourMindIcon() {
+function addToComposer() {
   if (document.getElementsByClassName('emobook-composer').length > 0) {
     return;
   }
 
-  var composer = document.getElementById('pagelet_composer'),
-    iframe = document.createElement('iframe'),
+  var composer = document.getElementById('pagelet_composer');
+
+  if (composer === null) {
+    return;
+  }
+
+  var icons = composer.getElementsByClassName('_1dsp')[0],
+    buttons = composer.getElementsByClassName('_1dso')[0];
+
+  if (icons === null || buttons === null) {
+    return;
+  }
+
+  var iframe = document.createElement('iframe'),
     iframeContainer = document.createElement('div'),
     button = document.createElement('div'),
-    buttonContainer = document.createElement('li'),
-    icons = composer.getElementsByClassName('_1dsp')[0],
-    buttons = composer.getElementsByClassName('_1dso')[0];
+    buttonContainer = document.createElement('li');
 
   iframe.setAttribute('src', popup);
   iframe.setAttribute('width', '100%');
@@ -86,36 +107,23 @@ function addWhatsOnYourMindIcon() {
   icons.appendChild(iframeContainer);
 }
 
-function addIconLoop() {
-  addWhatsOnYourMindIcon();
-  addChatIcon();
-  addCommentsIcon();
-  setTimeout(addIconLoop, 100);
-}
-
-function generateElement() {
-  var iframe = document.createElement('iframe');
-  iframe.setAttribute('src', popup);
-  iframe.setAttribute('width', 212);
-  iframe.setAttribute('height', 280);
-
-  var a = document.createElement('a');
-  a.classList.add('_6gf', '_6gb');
-  a.appendChild(iframe);
-
-  baseElement = a;
-}
 
 document.addEventListener('DOMContentLoaded', () => {
-  generateElement();
-  addIconLoop();
+  genChatElement();
+
+  (function loop() {
+    addToChats();
+    addToComments();
+    addToComposer();
+    setTimeout(loop, 100);
+  })();
 });
 
 window.addEventListener("message", (event) => {
   if (!event.data.emobook) return;
 
   var emoticon = event.data.emoticon,
-    emobooks = document.querySelectorAll('.emobook iframe'),
+    emobooks = document.querySelectorAll('.emobook-chat iframe'),
     active, typeElement, focusElement;
 
   for (var i = 0; i < emobooks.length; i++) {

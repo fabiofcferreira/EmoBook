@@ -1,5 +1,5 @@
 .emobook-composer iframe,
-.emobook iframe {
+.emobook-chat iframe {
   display: none;
   position: absolute;
   z-index: 999;
@@ -15,15 +15,11 @@
   opacity: 0;
 }
 
-.emobook a {
-  background-position: 0 -152px;
-}
-
-.emobook a:hover {
+.emobook-chat a:hover {
   opacity: 1;
 }
 
-.emobook a {
+.emobook-chat a {
   display: block;
   height: 16px;
   position: relative;
@@ -31,12 +27,12 @@
   width: 16px;
 }
 
-.emobook input {
+.emobook-chat input {
   display: none;
 }
 
-.emobook:hover iframe,
-.emobook a:hover iframe {
+.emobook-chat:hover iframe,
+.emobook-chat a:hover iframe {
   display: block;
   opacity: 1;
 }

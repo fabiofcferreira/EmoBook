@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   (function loop() {
     addToChats();
-    addToComments();
-    addToComposer();
+    // addToComments();
+    // addToComposer();
     setTimeout(loop, 100);
   })();
 });
